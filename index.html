@@ -1,134 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <title>SAPD - MED </title>
-    <link rel="icon" href="media/logo_sapd_sans_bg.png" type="image/png">
-    <link rel="shortcut icon" href="media/logo_sapd_sans_bg.png" type="image/png">
-    <meta name="theme-color" content="#0b5ed7">
-    <!-- page CSS moved to css/index.css -->
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="css/index.css">
+        <title>SAPD - MED </title>
+        <link rel="icon" href="media/logo_sapd_sans_bg.png" type="image/png">
+        <link rel="shortcut icon" href="media/logo_sapd_sans_bg.png" type="image/png">
+        <meta name="theme-color" content="#0b5ed7">
+    </head>
 
-<body>
-
-    <!-- Navbar -->
-    <nav class="site-navbar">
-        <div class="container d-flex align-items-center justify-content-between">
-            <div class="brand">
-                <img src="./media/logo.png" alt="Logo" onerror="this.style.display='none'">
-                <div>
-                    <div class="title">SAPD</div>
-                    <div style="font-size:0.85rem;opacity:0.9">Mise en détention</div>
-                </div>
-            </div>
-            <div class="d-flex align-items-center" style="gap:1rem">
-                <a href="doj.html" class="text-white mr-3" title="DOJ">DOJ</a>
-                <a href="info.html" class="text-white mr-3" title="Info">Info</a>
-                <button id="themeToggle" class="theme-toggle" aria-label="Basculer thème">🌙</button>
-            </div>
-        </div>
-    </nav>
-
-    <div class="page-wrapper">
-        <section id="sectionMED" class="med-card">
-
-        <div class="row">
-
-            <div class="col-md-6 p-3">
-                <h2>Mise en détention</h2>
-                <div class="form-group">
-                    <label>Nom</label>
-                    <input type="text" class="form-control" id="nom" name="nom">
-                </div>
-                <div class="form-group">
-                    <label>Objets saisis</label>
-                    <input type="text" class="form-control" id="objetsSaisis" name="objetsSaisis" value="Biens personnels">
-                </div>
-                <div class="form-group">
-                    <label>Mail</label>
-                    <input type="text" class="form-control" id="mail" name="mail">
-                </div>
-                <div class="form-group">
-                    <label>Agents</label>
-                    <input type="text" class="form-control" id="agents" name="agents">
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="avocat_checkbox">
-                    <label class="form-check-label" for="avocat_checkbox">L'individu veux un avocat ? cocher si oui</label>
-                </div>
-                    <div class="form-group" id="poste_group">
-                        <label>Poste de Police</label>
-                        <select class="form-control" id="poste" name="poste">
-                            <option value="Paleto">Paleto</option>
-                            <option value="Vespucci" selected>Vespucci</option>
-                            <option value="Sandy Shore">Sandy Shore</option>
-                            <option value="Mission Row">Mission Row</option>
-                        </select>
-                    </div>
-                    <div class="form-group" id="med_link_group">
-                        <label>Lien de la M.E.D (collez le lien Discord)</label>
-                        <input type="text" class="form-control" id="med_link" name="med_link" placeholder="https://discordapp.com/…">
-                    </div>
-            </div>
-
-            <div class="col-md-6 p-3">
-                <h4>Sélection de la peine</h4>
-                <p class="small text-muted">Tapez pour filtrer (suggestions disponibles).</p>
-                <div class="form-row align-items-center mb-2">
-                    <div class="col-12">
-                        <input list="faits_tb" id="faits" class="form-control" placeholder="Rechercher une peine..." autocomplete="off">
-                        <datalist id="faits_tb"></datalist>
+    <body>
+        <!-- Navbar -->
+        <nav class="site-navbar">
+            <div class="container d-flex align-items-center justify-content-between">
+                <div class="brand">
+                    <img src="./media/logo.png" alt="Logo" onerror="this.style.display='none'">
+                    <div>
+                        <div class="title">SAPD</div>
+                        <div style="font-size:0.85rem;opacity:0.9">Mise en détention</div>
                     </div>
                 </div>
+                <div class="d-flex align-items-center" style="gap:1rem">
+                    <a href="doj.html" class="text-white mr-3" title="DOJ">DOJ</a>
+                    <a href="info.html" class="text-white mr-3" title="Info">Info</a>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Basculer thème">🌙</button>
+                </div>
+            </div>
+        </nav>
 
-                <div id="peine_details" class="mb-3 text-muted">Aucune peine sélectionnée</div>
-                <div>
-                    <button onclick="add_fait()" class="btn btn-secondary">Ajouter fait</button>
-                    <button onclick="reset_faits()" class="btn btn-light">Reset</button>
+        <div class="page-wrapper">
+            <section id="sectionMED" class="med-card">
+
+            <div class="row">
+
+                <div class="col-md-6 p-3">
+                    <h2>Mise en détention</h2>
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" class="form-control" id="nom" name="nom">
+                    </div>
+                    <div class="form-group">
+                        <label>Objets saisis</label>
+                        <input type="text" class="form-control" id="objetsSaisis" name="objetsSaisis" value="Biens personnels">
+                    </div>
+                    <div class="form-group">
+                        <label>Mail</label>
+                        <input type="text" class="form-control" id="mail" name="mail">
+                    </div>
+                    <div class="form-group">
+                        <label>Agents</label>
+                        <input type="text" class="form-control" id="agents" name="agents">
+                    </div>
+                    <div class="form-group">
+                        <label>ID unique de l'individu</label>
+                        <input type="text" class="form-control" id="id_individu" name="id_individu">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="avocat_checkbox">
+                        <label class="form-check-label" for="avocat_checkbox">L'individu veux un avocat ? cocher si oui</label>
+                    </div>
+                        <div class="form-group" id="poste_group">
+                            <label>Poste de Police</label>
+                            <select class="form-control" id="poste" name="poste">
+                                <option value="Paleto">Paleto</option>
+                                <option value="Vespucci" selected>Vespucci</option>
+                                <option value="Sandy Shore">Sandy Shore</option>
+                                <option value="Mission Row">Mission Row</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="med_link_group">
+                            <label>Lien de la M.E.D (collez le lien Discord)</label>
+                            <input type="text" class="form-control" id="med_link" name="med_link" placeholder="https://discordapp.com/…">
+                        </div>
                 </div>
 
-                <hr>
-                <h5>Faits ajoutés</h5>
-                <div id="add_2">Pas de faits pour l'instant</div>
-                <div id="faits_error" class="text-danger small mt-1" style="display:none"></div>
+                <div class="col-md-6 p-3">
+                    <h4>Sélection de la peine</h4>
+                    <p class="small text-muted">Tapez pour filtrer (suggestions disponibles).</p>
+                    <div class="form-row align-items-center mb-2">
+                        <div class="col-12">
+                            <input list="faits_tb" id="faits" class="form-control" placeholder="Rechercher une peine..." autocomplete="off">
+                            <datalist id="faits_tb"></datalist>
+                        </div>
+                    </div>
+
+                    <div id="peine_details" class="mb-3 text-muted">Aucune peine sélectionnée</div>
+                    <div>
+                        <button onclick="add_fait()" class="btn btn-secondary">Ajouter fait</button>
+                        <button onclick="reset_faits()" class="btn btn-light">Reset</button>
+                    </div>
+                    <hr>
+                    <h5>Faits ajoutés</h5>
+                    <div id="add_2">Pas de faits pour l'instant</div>
+                    <div id="faits_error" class="text-danger small mt-1" style="display:none"></div>
+                </div>
             </div>
-
-        </div>
-
-        <div class="row mt-4">
-            <div class="col-12">
-                <button onclick="med()" class="btn btn-primary mr-2">Mise en détention</button>
-                <button onclick="previewMed()" class="btn btn-secondary mr-2">Prévisualiser</button>
-                <button id="btn_doj_call" onclick="appelDoj()" class="btn btn-warning mr-2">appel DOJ</button>
-                <button id="btn_avocat_call" onclick="avocat()" class="btn btn-info">Appel Avocat</button>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <button onclick="med()" class="btn btn-primary mr-2">Mise en détention</button>
+                    <button onclick="previewMed()" class="btn btn-secondary mr-2">Prévisualiser</button>
+                    <button id="btn_doj_call" onclick="appelDoj()" class="btn btn-warning mr-2">appel DOJ</button>
+                    <button id="btn_avocat_call" onclick="avocat()" class="btn btn-info">Appel Avocat</button>
+                </div>
+            </div>
+        </section>
+        <div id="previewOverlay" class="preview-overlay" onclick="if(event.target===this) closePreview();">
+            <div class="preview-box" role="dialog" aria-modal="true">
+                <div id="copyBadge" class="copy-badge" aria-hidden="true">M.E.D copiée</div>
+                <h5>Prévisualisation de la M.E.D</h5>
+                <div id="previewHtml" class="preview-content">(Aucune prévisualisation)</div>
+                <div class="preview-actions">
+                    <button class="btn btn-primary" onclick="copyPreview()">Copier</button>
+                    <button class="btn btn-secondary" onclick="closePreview()">Fermer</button>
+                </div>
             </div>
         </div>
-
-    </section>
-
-    <!-- page JS moved to js/index.js -->
-
-    <!-- Preview Modal -->
-    <div id="previewOverlay" class="preview-overlay" onclick="if(event.target===this) closePreview();">
-        <div class="preview-box" role="dialog" aria-modal="true">
-            <div id="copyBadge" class="copy-badge" aria-hidden="true">M.E.D copiée</div>
-            <h5>Prévisualisation de la M.E.D</h5>
-            <div id="previewHtml" class="preview-content">(Aucune prévisualisation)</div>
-            <div class="preview-actions">
-                <button class="btn btn-primary" onclick="copyPreview()">Copier</button>
-                <button class="btn btn-secondary" onclick="closePreview()">Fermer</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/theme.js"></script>
-    <script src="js/index.js"></script>
-</body>
+        <script src="js/theme.js"></script>
+        <script src="js/index.js"></script>
+    </body>
 </html>
