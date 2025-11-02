@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>DOJ - Comparution</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/doj.css">
+    <link rel="stylesheet" href="css/navbar-anim.css">
     <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
     <!-- DOJ styles moved to css/doj.css -->
 </head>
-<body>
+<body class="animate-page">
     <nav class="site-navbar">
         <div class="container d-flex align-items-center justify-content-between">
             <div class="brand">
@@ -19,9 +21,10 @@
                     <div style="font-size:.85rem;opacity:.9">Comparution</div>
                 </div>
             </div>
-            <div class="d-flex align-items-center" style="gap:1rem">
-                <a href="index.html" class="text-white mr-3" title="MED">MED</a>
-                <a href="info.html" class="text-white mr-3" title="Info">Info</a>
+                <div class="d-flex align-items-center" style="gap:1rem">
+                <a href="index.html" class="text-white mr-3" title="Règlement"><i class="fa fa-book nav-icon" aria-hidden="true"></i>Règlement</a>
+                <a href="MED.html" class="text-white mr-3" title="MED"><i class="fa fa-notes-medical nav-icon" aria-hidden="true"></i>MED</a>
+                <a href="info.html" class="text-white mr-3" title="Info"><i class="fa fa-info-circle nav-icon" aria-hidden="true"></i>Info</a>
                 <button id="themeToggle" class="theme-toggle" aria-label="Basculer thème">🌙</button>
             </div>
         </div>
@@ -97,6 +100,7 @@
 
     <!-- DOJ page JS moved to js/doj.js -->
     <script src="js/theme.js"></script>
+    <script src="js/navbar.js" defer></script>
     <script src="js/doj.js"></script>
 </body>
 </html>

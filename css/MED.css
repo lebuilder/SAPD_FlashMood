@@ -1,5 +1,4 @@
-/* Copied from EMS_FlashMood/css/index.css to make SAPD index match EMS styling */
-/* Extracted from index.html - layout, navbar, med-card, preview modal, dark-mode, transitions */
+/* Extracted from MED.html - layout, navbar, med-card, preview modal, dark-mode, transitions */
 /* Layout & fonts */
 body {
     font-family: 'Roboto', sans-serif;
@@ -22,7 +21,7 @@ body {
 
 /* Center the MED card */
 .page-wrapper { display:flex; align-items:flex-start; justify-content:center; padding:2.25rem 1rem; }
-.med-card, .reglement-card {
+.med-card {
     width:100%;
     max-width:980px;
     background: rgba(255,255,255,0.95);
@@ -47,7 +46,7 @@ h2 { margin-top:0 }
 .fact-remove:hover { color:#e74c3c }
 
 @media (max-width: 768px) {
-    .med-card, .reglement-card { padding:0.75rem; margin:0.5rem }
+    .med-card { padding:0.75rem; margin:0.5rem }
     .site-navbar .title { font-size:1rem }
 }
 
@@ -60,70 +59,52 @@ h2 { margin-top:0 }
 .preview-actions{ display:flex; gap:0.5rem; justify-content:flex-end; margin-top:0.75rem }
 
 /* Smooth theme transitions */
-body, .site-navbar, .med-card, .reglement-card, .preview-box, .preview-content, .form-control, .btn, .fact-item { 
+body, .site-navbar, .med-card, .preview-box, .preview-content, .form-control, .btn, .fact-item { 
     transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 /* small copy badge inside preview */
-.copy-badge{ position:absolute; top:12px; right:16px; background:#1f7a3a; color:#fff; padding:6px 10px; border-radius:6px; box-shadow:0 6px 18px rgba(2,6,23,0.35); display:none; z-index:2100; font-size:0.9rem }
-body.dark-mode .copy-badge{ background:#1f6d37 }
+.copy-badge{ position:absolute; top:12px; right:16px; background:#155e9a; color:#fff; padding:6px 10px; border-radius:6px; box-shadow:0 6px 18px rgba(2,6,23,0.35); display:none; z-index:2100; font-size:0.9rem }
+body.dark-mode .copy-badge{ background:#2b7bb0 }
 
 /* Dark mode styles */
 body.dark-mode { background: linear-gradient(rgba(2,6,23,0.9), rgba(2,6,23,0.9)), url('media/bg.jpg') center/cover no-repeat fixed; color:#ddd }
-body.dark-mode .site-navbar { background:#0f3d26 }
-body.dark-mode .med-card, body.dark-mode .reglement-card, body.dark-mode .preview-box { background: #0f1720; color:#e6eef8 }
-body.dark-mode .form-control { background:#0f1720; color:#e6eef8; border-color: #165f2b }
-body.dark-mode .btn-primary { background:#1f7a3a; border-color:#165f2b }
+body.dark-mode .site-navbar { background:#062b4a }
+body.dark-mode .med-card, body.dark-mode .preview-box { background: #0f1720; color:#e6eef8 }
+body.dark-mode .form-control { background:#0f1720; color:#e6eef8; border-color: #21455a }
+body.dark-mode .btn-primary { background:#155e9a; border-color:#124964 }
 body.dark-mode .btn-light { background:#1b2b35; color:#e6eef8 }
 body.dark-mode .preview-box pre, body.dark-mode .preview-content { background:#071216; color:#cfe8ff }
 /* Theme toggle button */
 .theme-toggle { border:0; background:transparent; color:inherit; font-size:1.05rem; cursor:pointer }
 
+/* Active nav link styling */
+.site-navbar a.active { text-decoration:underline; font-weight:700; opacity:1 }
+.site-navbar a { color: #fff; opacity:0.95 }
 /* small icon in navbar links */
 .site-navbar .nav-icon{ margin-right:0.5rem; font-size:0.95rem }
 
-/* Reglement styling: serious, readable and modern */
-.reglement-card .reg-content {
-    display: block;
-    /* Single-column vertical flow (top-to-bottom) per user request */
-    column-count: 1;
-    column-gap: 0;
-    padding: 0.5rem 0.25rem;
-}
-.reglement-card h3{ 
-    display:block;
-    background: linear-gradient(90deg, rgba(11,94,215,0.95), rgba(6,75,160,0.95));
-    color: #fff;
-    padding:0.45rem 0.75rem;
-    margin:0.5rem 0 0.75rem 0;
-    border-radius:6px;
-    font-size:1rem;
-    box-shadow: 0 6px 18px rgba(2,6,23,0.06);
-}
-.reglement-card p{ 
-    margin:0 0 0.6rem 0; 
-    line-height:1.45; 
-    color:#1b2b2b;
-}
-.reglement-card ul{ margin:0.3rem 0 0.8rem 1.1rem; }
-.reglement-card li{ margin-bottom:0.4rem }
-.reglement-card .conclusion{ 
-    background: #f6f8fa; 
-    border-left:4px solid #0b5ed7; 
-    padding:0.6rem 0.8rem; 
-    border-radius:6px; 
-    margin-top:1rem;
-}
-@media (max-width:900px){
-    .reglement-card .reg-content{ column-count:1 }
-    .reglement-card h3{ font-size:1.02rem }
+/* Subtle UI animations */
+.animate-page .page-wrapper { animation: fadeInUp .36s cubic-bezier(.2,.9,.3,1) both; }
+.site-navbar a{ position:relative; display:inline-flex; align-items:center; gap:0.35rem; transition:color .18s ease, transform .12s ease; }
+.site-navbar a::after{ content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:rgba(255,255,255,0.14); transform:scaleX(0); transform-origin:left center; transition:transform .22s cubic-bezier(.2,.9,.3,1); border-radius:2px }
+.site-navbar a:hover::after{ transform:scaleX(1) }
+.site-navbar a:hover .nav-icon{ transform: translateY(-2px) rotate(-6deg); opacity:0.95 }
+
+/* reg-body reveal animation for open state */
+.reg-body { will-change: max-height, opacity; }
+.reg-section.open .reg-body { animation: revealDown .28s ease both }
+
+@keyframes revealDown {
+    from { opacity:0; transform:translateY(-6px); }
+    to { opacity:1; transform:translateY(0); }
 }
 
-.reg-section { margin-bottom:0.18rem; border-radius:6px; overflow:hidden; }
-.reg-toggle{ width:100%; text-align:left; background:linear-gradient(90deg, rgba(11,94,215,0.95), rgba(6,75,160,0.95)); color:#fff; border:0; padding:0.6rem 0.8rem; font-weight:700; font-size:1rem; display:flex; align-items:center; justify-content:space-between; cursor:pointer; }
-.reg-toggle .chev{ margin-left:0.6rem; transition: transform .25s ease; font-size:0.95rem }
-.reg-body{ background: #fff; color:#1b2b2b; padding:0; max-height:0; overflow:hidden; transition: max-height .32s ease, padding .25s ease; border:1px solid rgba(0,0,0,0.04); border-top:0 }
-.reg-section.open{ margin-bottom:0.8rem; }
-.reg-section.open .reg-body{ max-height: 2000px; padding:0.8rem; }
-.reg-section.open .reg-toggle .chev{ transform: rotate(180deg) }
+@keyframes fadeInUp {
+    from { opacity:0; transform:translateY(8px); }
+    to { opacity:1; transform:translateY(0); }
+}
 
-@media (prefers-reduced-motion: reduce){ .reg-body{ transition:none } }
+@media (prefers-reduced-motion: reduce){
+    .animate-page .page-wrapper, .reg-section.open .reg-body { animation: none !important }
+    .site-navbar a::after { transition: none }
+}
