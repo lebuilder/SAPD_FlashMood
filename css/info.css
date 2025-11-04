@@ -15,9 +15,13 @@ h2.section-title{ margin-top:0; font-size:1.1rem; font-weight:700 }
 body, .site-navbar, .info-card, .content-box, .page-wrapper { transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease; }
 @media (max-width: 992px){ .grid{ max-width:1000px } .info-card{ flex:1 1 48% } }
 @media (max-width: 720px){ .grid{ flex-direction:column; max-width:100% } .info-card{ flex:1 1 100%; padding:0.9rem } }
-/* Dark mode */
+/* Dark mode (aligned with MED.css) */
 body.dark-mode { background: linear-gradient(rgba(2,6,23,0.95), rgba(2,6,23,0.95)), url('media/bg.jpg') center/cover no-repeat fixed; color:#ddd }
 body.dark-mode .site-navbar { background:#062b4a }
 body.dark-mode .info-card { background:#0f1720; color:#e6eef8 }
 body.dark-mode .content-box { background:#071216; color:#cfe8ff }
+body.dark-mode .form-control { background:#0f1720; color:#e6eef8; border-color:#21455a }
+body.dark-mode .btn-primary { background:#155e9a; border-color:#124964 }
+body.dark-mode .btn-light { background:#1b2b35; color:#e6eef8 }
+body.dark-mode .preview-box pre, body.dark-mode .preview-content { background:#071216; color:#cfe8ff }
 .theme-toggle { border:0; background:transparent; color:inherit; font-size:1.05rem; cursor:pointer }
